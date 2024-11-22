@@ -11,7 +11,7 @@ if ($_GET['status'] == 'success' && isset($_GET['booking_id'])) {
 
         $query = "UPDATE tbl_booking SET payment_status = 'paid' WHERE booking_id = ?";
         $stmt = $connection->prepare($query);
-        $stmt->bind_param('i', $booking_id); // 'i' for integer
+        $stmt->bind_param('i', $booking_id);
         $stmt->execute();
 
         if ($stmt->affected_rows > 0) {
